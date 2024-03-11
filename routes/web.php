@@ -19,9 +19,31 @@ $router->get('/', function () use ($router) {
 
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('members',  ['uses' => 'MemberController@showAllMembers']);
-    $router->get('members/{id}', ['uses' => 'MemberController@showOneMember']);
+$router->get('members',  ['uses' => 'MemberController@showAllMembers']);
+$router->get('members/{id}', ['uses' => 'MemberController@showOneMember']);
+$router->get('member/{id}/bookings', ['uses' => 'App\Http\Controllers\MemberController@showMemberBookings']);
+$router->post('members', ['uses' => 'MemberController@create']);
+$router->put('members/{id}', ['uses' => 'MemberController@update']);
+$router->delete('members/{id}', ['uses' => 'MemberController@delete']);
+    
+    
+
 });
 
 
-$router->get('member/{id}/bookings', ['uses' => 'App\Http\Controllers\MemberController@showMemberBookings']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
